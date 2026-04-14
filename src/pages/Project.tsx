@@ -55,8 +55,8 @@ const deckData: Record<string, { title: string; images: string[]; youtubeId?: st
   "black-crusader": {
     title: "The Black Crusader",
     images: [
-      "/images/TheBlackCrusader-Title.jpg",
-      "/images/TheBlackCrusader-1.jpg",
+      "/images/Black Crusader Thumbnail_.jpg", // <-- UPDATED TO MATCH YOUR FILE
+      "/images/TheBlackCrusader-1.jpg", // <-- CHECK THESE SLIDES IN GITHUB!
       "/images/TheBlackCrusader-2.jpg",
       "/images/TheBlackCrusader-3.jpg",
       "/images/TheBlackCrusader-4.jpg",
@@ -66,8 +66,8 @@ const deckData: Record<string, { title: string; images: string[]; youtubeId?: st
   "kars4kids": {
     title: "Kars4Kids!",
     images: [
-      "/images/Kars4Kids-Title.png",
-      "/images/Kars4Kids-1.png",
+      "/images/Kars4Kids Thumbnail.jpg", // <-- UPDATED TO MATCH YOUR FILE
+      "/images/Kars4Kids-1.png", // <-- CHECK THESE SLIDES IN GITHUB!
       "/images/Kars4Kids-2.png",
       "/images/Kars4Kids-3.png",
       "/images/Kars4Kids-4.png"
@@ -76,106 +76,11 @@ const deckData: Record<string, { title: string; images: string[]; youtubeId?: st
   "royal-flush": {
     title: "The Royal Flush",
     images: [
-      "/images/TheRoyalFlush-Title.png",
+      "/images/TheRoyalFlush-Title.png", // <-- CHECK THIS IN GITHUB!
       "/images/TheRoyalFlush-1.png",
       "/images/TheRoyalFlush-2.png"
     ]
   }
 };
 
-export default function Project() {
-  const { id } = useParams<{ id: string }>();
-  const project = id ? deckData[id] : null;
-
-  const isWriting = ["black-crusader", "kars4kids", "royal-flush"].includes(id || "");
-  const backUrl = isWriting ? "/writing" : "/development-slate";
-  const backTextTop = isWriting ? "← Back to Writing" : "← Back to Slate";
-  const backTextBottom = isWriting ? "Back to Writing" : "Back to Development Slate";
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [id]);
-
-  if (!project) {
-    return (
-      <div className="min-h-screen bg-black flex flex-col items-center justify-center px-6">
-        <h1 className="text-white text-4xl font-bold uppercase tracking-widest mb-8 text-center">
-          Project Not Found
-        </h1>
-        <Link 
-          to={backUrl}
-          className="inline-block rounded-full border-2 border-[#00e5ff] text-[#00e5ff] px-8 py-3 font-bold uppercase tracking-widest transition-all duration-300 hover:bg-[#00e5ff] hover:text-black hover:shadow-[0_0_20px_rgba(0,229,255,0.4)]"
-        >
-          {backTextBottom}
-        </Link>
-      </div>
-    );
-  }
-
-  return (
-    <div className="min-h-screen bg-black pb-32">
-      {/* Sticky Header */}
-      <header className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-zinc-900 py-4 px-6">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link 
-            to={backUrl} 
-            className="text-white/60 hover:text-[#00e5ff] uppercase tracking-widest text-sm transition-colors duration-300"
-          >
-            {backTextTop}
-          </Link>
-          <div className="text-white uppercase tracking-widest font-bold text-sm md:text-base text-right">
-            {project.title}
-          </div>
-        </div>
-      </header>
-
-      {/* Scrolling Presentation (The Slides) */}
-      <div className="max-w-4xl mx-auto px-4 mt-16 flex flex-col gap-8 md:gap-12">
-        {project.youtubeId && (
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="w-full aspect-video bg-zinc-900 rounded-xl shadow-2xl overflow-hidden border border-white/5"
-          >
-            <iframe 
-              width="100%" 
-              height="100%" 
-              src={`https://www.youtube.com/embed/${project.youtubeId}?modestbranding=1`} 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowFullScreen
-            ></iframe>
-          </motion.div>
-        )}
-        {project.images.map((imgSrc, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="bg-zinc-900 rounded-xl shadow-2xl overflow-hidden border border-white/5"
-          >
-            <img 
-              src={imgSrc} 
-              alt={`${project.title} Slide ${index + 1}`} 
-              className="w-full h-auto block"
-            />
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Bottom CTA */}
-      <div className="mt-24 text-center px-6">
-        <Link 
-          to={backUrl}
-          className="inline-block rounded-full border-2 border-white/30 text-white px-8 py-4 font-bold uppercase tracking-widest transition-all duration-300 hover:bg-white hover:text-black hover:border-white"
-        >
-          {backTextBottom}
-        </Link>
-      </div>
-    </div>
-  );
-}
+// ... KEEP THE REST OF YOUR PROJECT.TSX CODE EXACTLY THE SAME DOWN HERE ...

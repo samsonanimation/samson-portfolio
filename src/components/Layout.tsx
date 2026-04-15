@@ -1,6 +1,6 @@
-import { Outlet, Link, useLocation } from "react-router-dom";
-import { Mail, Linkedin, X } from "lucide-react";
-import { useState, createContext, useContext } from "react";
+import { useEffect, useState, createContext, useContext } from "react";
+import { BrowserRouter, Routes, Route, useLocation, Outlet, Link } from "react-router-dom";
+import { Mail, Linkedin, X, Menu } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 type LightboxContextType = {
@@ -18,6 +18,7 @@ export function useLightbox() {
 
 export default function Layout() {
   const [lightboxVideo, setLightboxVideo] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   const navLinks = [
@@ -29,6 +30,20 @@ export default function Layout() {
     { name: "Contact", path: "/contact" },
   ];
 
+  // Close the mobile menu automatically when a link is clicked
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  // Lock scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
+
   return (
     <LightboxContext.Provider value={{
       openLightbox: (url) => setLightboxVideo(url),
@@ -39,10 +54,17 @@ export default function Layout() {
         {/* Navbar */}
         <nav className="fixed top-0 w-full z-40 bg-black/80 backdrop-blur-md border-b border-white/10">
           <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-            <Link to="/" className="font-display font-black text-3xl tracking-tighter uppercase">
+            {/* Logo */}
+            <Link 
+              to="/" 
+              className="font-display font-black text-3xl tracking-tighter uppercase z-50 relative"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               SAMSON.
             </Link>
-            <div className="hidden md:flex gap-8 text-sm font-normal tracking-[0.2em] uppercase">
+
+            {/* Desktop Navigation (Hidden on Tablet & Mobile) */}
+            <div className="hidden lg:flex gap-8 text-sm font-normal tracking-[0.2em] uppercase">
               {navLinks.map((link) => (
                 link.external ? (
                   <a 
@@ -63,7 +85,51 @@ export default function Layout() {
                 )
               ))}
             </div>
+
+            {/* Mobile Hamburger Button (Hidden on Desktop) */}
+            <button 
+              className="lg:hidden text-white hover:text-[#00e5ff] transition-colors z-50 relative"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            </button>
           </div>
+
+          {/* Mobile Menu Overlay */}
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="absolute top-0 left-0 w-full h-screen bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 lg:hidden z-40"
+              >
+                {navLinks.map((link) => (
+                  link.external ? (
+                    <a 
+                      key={link.name} 
+                      href={link.path}
+                      className="text-2xl font-bold uppercase tracking-widest text-white/70 hover:text-[#00e5ff] transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.name}
+                      to={link.path}
+                      className={`text-2xl font-bold uppercase tracking-widest transition-colors ${
+                        location.pathname === link.path ? "text-[#00e5ff]" : "text-white/70 hover:text-[#00e5ff]"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  )
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </nav>
 
         {/* Main Content */}
@@ -101,7 +167,7 @@ export default function Layout() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-lg p-6"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-lg p-6"
               onClick={() => setLightboxVideo(null)}
             >
               <button 

@@ -2,87 +2,84 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "motion/react";
 
-// --- EXPLICIT ASSET IMPORTS (Forces Vite to include them) ---
-// Wolfgang
-import wolfgangCover from "/images/Wolfgang-Cover.jpg";
-import wolfgang1 from "/images/Wolfgang-1.jpg";
-import wolfgang2 from "/images/Wolfgang-2.jpg";
-import wolfgang3 from "/images/Wolfgang-3.jpg";
-import wolfgang4 from "/images/Wolfgang-4.jpg";
-import wolfgang5 from "/images/Wolfgang-5.jpg";
-import wolfgang6 from "/images/Wolfgang-6.jpg";
-import wolfgang7 from "/images/Wolfgang-7.png";
-
-// Oswin
-import oswinCover from "/images/Oswin-Cover.jpg";
-import oswin1 from "/images/Oswin-1.jpg";
-import oswin2 from "/images/Oswin-2.jpg";
-import oswin3 from "/images/Oswin-3.jpg";
-import oswin4 from "/images/Oswin-4.jpg";
-import oswin5 from "/images/Oswin-5.jpg";
-import oswin6 from "/images/Oswin-6.jpg";
-import oswin7 from "/images/Oswin-7.jpg";
-import oswin8 from "/images/Oswin-8.jpg";
-import oswin9 from "/images/Oswin-9.jpg";
-import oswin10 from "/images/Oswin-10.jpg";
-import oswin11 from "/images/Oswin-11.jpg";
-import oswin12 from "/images/Oswin-12.png";
-
-// Beep
-import beepCover from "/images/Beep-Cover.png";
-import beep1 from "/images/Beep-1.png";
-import beep2 from "/images/Beep-2.png";
-import beep3 from "/images/Beep-3.png";
-import beep4 from "/images/Beep-4.png";
-import beep5 from "/images/Beep-5.png";
-import beep6 from "/images/Beep-6.png";
-import beep7 from "/images/Beep-7.png";
-import beep8 from "/images/Beep-8.png";
-
-// Writing
-import blackCrusaderTitle from "/images/Black Crusader Thumbnail_.jpg";
-import blackCrusader1 from "/images/TheBlackCrusader-1.jpg";
-import blackCrusader2 from "/images/TheBlackCrusader-2.jpg";
-import blackCrusader3 from "/images/TheBlackCrusader-3.jpg";
-import blackCrusader4 from "/images/TheBlackCrusader-4.jpg";
-import blackCrusader5 from "/images/TheBlackCrusader-5.jpg";
-
-import karsTitle from "/images/Kars4Kids Thumbnail.jpg";
-import kars1 from "/images/Kars4Kids-1.png";
-import kars2 from "/images/Kars4Kids-2.png";
-import kars3 from "/images/Kars4Kids-3.png";
-import kars4 from "/images/Kars4Kids-4.png";
-
-import royalTitle from "/images/TheRoyalFlush-Title.png";
-import royal1 from "/images/TheRoyalFlush-1.png";
-import royal2 from "/images/TheRoyalFlush-2.png";
-
-// --- DATA STRUCTURE ---
 const deckData: Record<string, { title: string; images: string[]; youtubeId?: string }> = {
+  // --- ANIMATION PITCH DECKS ---
   "wolfgang": {
     title: "Wolfgang and Marcel",
-    images: [wolfgangCover, wolfgang1, wolfgang2, wolfgang3, wolfgang4, wolfgang5, wolfgang6, wolfgang7]
+    images: [
+      "/images/Wolfgang-Cover.jpg",
+      "/images/Wolfgang-1.jpg",
+      "/images/Wolfgang-2.jpg", 
+      "/images/Wolfgang-3.jpg",
+      "/images/Wolfgang-4.jpg", 
+      "/images/Wolfgang-5.jpg", 
+      "/images/Wolfgang-6.jpg",
+      "/images/Wolfgang-7.png"
+    ]
   },
   "oswin": {
     title: "Oswin the Great",
     youtubeId: "ywWIiahM4UE",
-    images: [oswinCover, oswin1, oswin2, oswin3, oswin4, oswin5, oswin6, oswin7, oswin8, oswin9, oswin10, oswin11, oswin12]
+    images: [
+      "/images/Oswin-Cover.jpg",
+      "/images/Oswin-1.jpg",
+      "/images/Oswin-2.jpg",
+      "/images/Oswin-3.jpg",
+      "/images/Oswin-4.jpg",
+      "/images/Oswin-5.jpg",
+      "/images/Oswin-6.jpg",
+      "/images/Oswin-7.jpg",
+      "/images/Oswin-8.jpg",
+      "/images/Oswin-9.jpg",
+      "/images/Oswin-10.jpg",
+      "/images/Oswin-11.jpg",
+      "/images/Oswin-12.png"
+    ]
   },
   "beep": {
     title: "Beep!",
-    images: [beepCover, beep1, beep2, beep3, beep4, beep5, beep6, beep7, beep8]
+    images: [
+      "/images/Beep-Cover.png",
+      "/images/Beep-1.png",
+      "/images/Beep-2.png",
+      "/images/Beep-3.png",
+      "/images/Beep-4.png",
+      "/images/Beep-5.png",
+      "/images/Beep-6.png",
+      "/images/Beep-7.png",
+      "/images/Beep-8.png"
+    ]
   },
+
+  // --- WRITING SCRIPTS ---
   "black-crusader": {
     title: "The Black Crusader",
-    images: [blackCrusaderTitle, blackCrusader1, blackCrusader2, blackCrusader3, blackCrusader4, blackCrusader5]
+    images: [
+      "/images/Black Crusader Thumbnail_.jpg", 
+      "/images/TheBlackCrusader-1.jpg", 
+      "/images/TheBlackCrusader-2.jpg",
+      "/images/TheBlackCrusader-3.jpg",
+      "/images/TheBlackCrusader-4.jpg",
+      "/images/TheBlackCrusader-5.jpg"
+    ]
   },
   "kars4kids": {
     title: "Kars4Kids!",
-    images: [karsTitle, kars1, kars2, kars3, kars4]
+    images: [
+      "/images/Kars4Kids Thumbnail.jpg", 
+      "/images/Kars4Kids-1.png", 
+      "/images/Kars4Kids-2.png",
+      "/images/Kars4Kids-3.png",
+      "/images/Kars4Kids-4.png"
+    ]
   },
   "royal-flush": {
     title: "The Royal Flush",
-    images: [royalTitle, royal1, royal2]
+    images: [
+      "/images/TheRoyalFlush-Title.png", 
+      "/images/TheRoyalFlush-1.png",
+      "/images/TheRoyalFlush-2.png"
+    ]
   }
 };
 

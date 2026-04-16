@@ -77,7 +77,7 @@ export default function Home() {
               <span>NBC Peacock</span>
               <span>Amazon Prime Video</span>
               <span>Tubi</span>
-              <span>YouTube TV</span>
+              <span>YouTube</span>
               <span>Baboon Animation</span>
               <span>The Authority Group</span>
               <span>So! Animation</span>

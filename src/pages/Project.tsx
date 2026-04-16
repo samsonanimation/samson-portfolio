@@ -55,7 +55,7 @@ const deckData: Record<string, { title: string; images: string[]; youtubeId?: st
   "black-crusader": {
     title: "The Black Crusader",
     images: [
-      "/images/Black Crusader Thumbnail_.jpg", 
+      "/images/TheBlackCrusader-Title.jpg", 
       "/images/TheBlackCrusader-1.jpg", 
       "/images/TheBlackCrusader-2.jpg",
       "/images/TheBlackCrusader-3.jpg",
@@ -66,7 +66,7 @@ const deckData: Record<string, { title: string; images: string[]; youtubeId?: st
   "kars4kids": {
     title: "Kars4Kids!",
     images: [
-      "/images/Kars4Kids Thumbnail.jpg", 
+      "/images/Kars4Kids-Title.png", 
       "/images/Kars4Kids-1.png", 
       "/images/Kars4Kids-2.png",
       "/images/Kars4Kids-3.png",

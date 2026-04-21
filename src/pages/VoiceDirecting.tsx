@@ -26,7 +26,6 @@ export default function VoiceDirecting() {
   ];
 
   return (
-    {/* THE FIX: Added overflow-x-hidden and mobile padding */}
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-24 overflow-x-hidden">
       {/* 1. The Hero Section */}
       <motion.div 
@@ -37,7 +36,6 @@ export default function VoiceDirecting() {
         <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white break-words px-4 w-full text-center">
           Voice <span className="text-[#00e5ff]">Directing</span>
         </h1>
-        {/* THE FIX: Removed mb-12 to kill the double margin gap */}
         <p className="text-xl text-white/60 font-light max-w-3xl mx-auto px-2">
           Directing authentic, emotionally grounded performances for global broadcast hits.
         </p>

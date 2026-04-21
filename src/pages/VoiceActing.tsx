@@ -26,8 +26,9 @@ export default function VoiceActing() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-20 text-center"
       >
-        <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">
-          Voice Acting
+        {/* THE FIX: White "Voice", Cyan "Acting" */}
+        <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white">
+          Voice <span className="text-[#00e5ff]">Acting</span>
         </h1>
         <p className="text-xl text-white/60 font-light max-w-3xl mx-auto">
           Dynamic and versatile vocal performances across animation, commercial, and interactive media.

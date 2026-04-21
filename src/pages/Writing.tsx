@@ -71,8 +71,8 @@ export default function Writing() {
                 />
               </div>
               
-              {/* Text Block & Visual Button */}
-              <div className="mt-6 text-center md:text-left flex flex-col flex-grow justify-between items-center md:items-start">
+              {/* Text Block & Visual Button - NOW COMPLETELY CENTERED */}
+              <div className="mt-6 text-center flex flex-col flex-grow justify-between items-center">
                 <div className="w-full">
                   {/* Title */}
                   <h3 className="text-white uppercase font-display font-bold text-2xl md:text-xl lg:text-2xl group-hover:text-[#00e5ff] transition-colors duration-300">
@@ -84,7 +84,7 @@ export default function Writing() {
                   </p>
                 </div>
 
-                {/* THE FIX: Exact visual clone of View Deck */}
+                {/* The CTA Button Cues */}
                 <div className="mt-auto">
                   <span className="inline-block rounded-full border-2 border-[#00e5ff] text-[#00e5ff] px-8 py-3 font-bold uppercase tracking-widest transition-all duration-300 group-hover:bg-[#00e5ff] group-hover:text-black group-hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] whitespace-nowrap">
                     Read Script

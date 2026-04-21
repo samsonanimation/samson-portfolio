@@ -31,31 +31,31 @@ export default function VoiceDirecting() {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-20 text-center"
+        className="mb-20 text-center flex flex-col items-center"
       >
-        <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white break-words px-4 w-full">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white break-words px-4 w-full text-center">
           Voice <span className="text-[#00e5ff]">Directing</span>
         </h1>
-        <p className="text-xl text-white/80 font-light max-w-3xl mx-auto">
+        <p className="text-xl text-white/60 font-light max-w-3xl mx-auto mb-12">
           Directing authentic, emotionally grounded performances for global broadcast hits.
         </p>
       </motion.div>
 
-      {/* 2. The Spotlight Section */}
+      {/* 2. The Spotlight Section (Restored Centering) */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="w-full mb-20 flex flex-col md:items-start items-center text-center md:text-left"
+        className="w-full mb-20 flex flex-col items-center"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 uppercase tracking-wide border-b-4 border-[#00e5ff] pb-2 inline-block">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 uppercase tracking-wide border-b-4 border-[#00e5ff] pb-2 inline-block text-center">
           Featured Scenework
         </h2>
-        <p className="text-[#AAAAAA] text-lg mb-12 max-w-2xl">
+        <p className="text-[#AAAAAA] text-lg mb-12 text-center max-w-2xl">
           A deep dive into character arcs and comedic timing on Agent 203.
         </p>
         
-        <div className="w-full max-w-[1000px] mx-auto md:mx-0">
+        <div className="w-full max-w-[1000px]">
           <iframe 
             width="100%" 
             style={{ aspectRatio: "16/9", borderRadius: "12px" }} 
@@ -65,13 +65,14 @@ export default function VoiceDirecting() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowFullScreen
           ></iframe>
-          <p className="mt-6 text-white/60 font-medium tracking-wide">
+          <p className="mt-6 text-center text-white/60 font-medium tracking-wide">
             James Sutton | Voice Director - Scene Work & Pacing
           </p>
         </div>
       </motion.div>
 
-      <div className="mb-12 flex items-center justify-center md:justify-start gap-4">
+      {/* 3. Global Broadcast Credits */}
+      <div className="mb-12 flex items-center gap-4">
         <div className="h-[1px] w-12 bg-[#00e5ff]" />
         <h2 className="font-sans text-sm uppercase tracking-[0.2em] text-[#00e5ff] font-semibold">
           Global Broadcast Credits
@@ -87,8 +88,8 @@ export default function VoiceDirecting() {
             transition={{ delay: i * 0.1 }}
             className="group"
           >
-            {/* THE FIX: Center on mobile, left on desktop */}
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="block text-center md:text-left">
+            {/* Restored to strictly text-center */}
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="block text-center">
               <div className="w-full aspect-[16/9] relative overflow-hidden mb-6 bg-zinc-900 rounded-[16px] transition-all duration-300 ease-out group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-black/50 border border-white/5">
                 <img 
                   src={project.image}

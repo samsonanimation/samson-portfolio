@@ -46,17 +46,17 @@ export default function Contact() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-24">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-24 overflow-x-hidden">
       {/* Hero Section */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-24 text-center"
+        className="mb-24 text-center w-full"
       >
-        <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 text-white uppercase">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 text-white uppercase break-words w-full">
           Let's Build Something.
         </h1>
-        <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto font-sans">
+        <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto font-sans px-2">
           Partner with Samson Animation for original IP development, commercial production, and voice directing.
         </p>
       </motion.div>
@@ -66,7 +66,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="max-w-[600px] mx-auto"
+        className="w-full max-w-[600px] mx-auto px-2 sm:px-0"
       >
         {isSubmitted ? (
           <motion.div 
@@ -79,11 +79,11 @@ export default function Contact() {
             </p>
           </motion.div>
         ) : (
-          <form className="flex flex-col gap-8 [color-scheme:dark]" onSubmit={handleSubmit}>
+          <form className="flex flex-col gap-8 w-full [color-scheme:dark]" onSubmit={handleSubmit}>
             <input type="hidden" name="access_key" value="8c49f2da-3adf-479a-8a7b-c1b3978b83a6" />
             <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 w-full">
               <label htmlFor="name" className="text-sm font-bold tracking-widest uppercase text-white/70">
                 Name *
               </label>
@@ -92,12 +92,12 @@ export default function Contact() {
                 id="name" 
                 name="name"
                 required 
-                className="bg-zinc-900/50 border-b-2 border-white/20 focus:border-[#00e5ff] outline-none px-4 py-3 text-white font-sans transition-colors placeholder:text-white/20" 
+                className="w-full bg-zinc-900/50 border-b-2 border-white/20 focus:border-[#00e5ff] outline-none px-4 py-3 text-white font-sans transition-colors placeholder:text-white/20" 
                 placeholder="Your Name" 
               />
             </div>
             
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 w-full">
               <label htmlFor="company" className="text-sm font-bold tracking-widest uppercase text-white/70">
                 Company / Agency
               </label>
@@ -105,12 +105,12 @@ export default function Contact() {
                 type="text" 
                 id="company" 
                 name="company"
-                className="bg-zinc-900/50 border-b-2 border-white/20 focus:border-[#00e5ff] outline-none px-4 py-3 text-white font-sans transition-colors placeholder:text-white/20" 
+                className="w-full bg-zinc-900/50 border-b-2 border-white/20 focus:border-[#00e5ff] outline-none px-4 py-3 text-white font-sans transition-colors placeholder:text-white/20" 
                 placeholder="Your Company" 
               />
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 w-full">
               <label htmlFor="email" className="text-sm font-bold tracking-widest uppercase text-white/70">
                 Email Address *
               </label>
@@ -119,24 +119,24 @@ export default function Contact() {
                 id="email" 
                 name="email"
                 required 
-                className="bg-zinc-900/50 border-b-2 border-white/20 focus:border-[#00e5ff] outline-none px-4 py-3 text-white font-sans transition-colors placeholder:text-white/20" 
+                className="w-full bg-zinc-900/50 border-b-2 border-white/20 focus:border-[#00e5ff] outline-none px-4 py-3 text-white font-sans transition-colors placeholder:text-white/20" 
                 placeholder="you@company.com" 
               />
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 w-full">
               <label htmlFor="inquiry" className="text-sm font-bold tracking-widest uppercase text-white/70">
                 Inquiry Type
               </label>
-              <div className="relative" ref={dropdownRef}>
+              <div className="relative w-full" ref={dropdownRef}>
                 <input type="hidden" name="inquiry_type" value={selectedInquiry} />
                 <button 
                   type="button"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   className={`w-full flex items-center justify-between bg-zinc-900/50 border-b-2 ${isDropdownOpen ? 'border-[#00e5ff]' : 'border-white/20'} outline-none px-4 py-3 text-white font-sans transition-colors cursor-pointer`}
                 >
-                  <span>{inquiryOptions.find(opt => opt.value === selectedInquiry)?.label}</span>
-                  <div className={`text-white/50 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`}>
+                  <span className="truncate pr-4">{inquiryOptions.find(opt => opt.value === selectedInquiry)?.label}</span>
+                  <div className={`flex-shrink-0 text-white/50 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`}>
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
@@ -153,7 +153,7 @@ export default function Contact() {
                           setSelectedInquiry(option.value);
                           setIsDropdownOpen(false);
                         }}
-                        className="text-left px-4 py-3 text-white font-sans hover:bg-[#2a2a2a] hover:text-[#00e5ff] transition-colors"
+                        className="text-left px-4 py-3 text-white font-sans hover:bg-[#2a2a2a] hover:text-[#00e5ff] transition-colors truncate"
                       >
                         {option.label}
                       </button>
@@ -163,7 +163,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 w-full">
               <label htmlFor="project" className="text-sm font-bold tracking-widest uppercase text-white/70">
                 Tell us about your project...
               </label>
@@ -171,7 +171,7 @@ export default function Contact() {
                 id="project" 
                 name="message"
                 rows={6} 
-                className="bg-zinc-900/50 border-b-2 border-white/20 focus:border-[#00e5ff] outline-none px-4 py-3 text-white font-sans transition-colors resize-y placeholder:text-white/20" 
+                className="w-full bg-zinc-900/50 border-b-2 border-white/20 focus:border-[#00e5ff] outline-none px-4 py-3 text-white font-sans transition-colors resize-y placeholder:text-white/20" 
                 placeholder="Project details, timeline, budget, etc."
               ></textarea>
             </div>
@@ -186,12 +186,12 @@ export default function Contact() {
         )}
 
         {/* Direct Contact Fallback */}
-        <div className="mt-16 text-center">
-          <p className="text-white/60 font-sans text-sm">
+        <div className="mt-16 text-center w-full">
+          <p className="text-white/60 font-sans text-sm break-words">
             Or reach out directly: <br className="md:hidden" />
             <a 
               href="mailto:james@samsonanimation.com" 
-              className="text-[#00e5ff] hover:text-white transition-colors font-medium ml-1"
+              className="text-[#00e5ff] hover:text-white transition-colors font-medium ml-1 break-all"
             >
               james@samsonanimation.com
             </a>

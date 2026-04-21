@@ -70,8 +70,8 @@ export default function Writing() {
                 />
               </div>
               
-              {/* Text Block */}
-              <div className="mt-6 text-left">
+              {/* THE FIX: This wrapper centers the text on mobile, keeps it left on desktop */}
+              <div className="mt-6 text-center md:text-left">
                 {/* Title */}
                 <h3 className="text-white uppercase font-display font-bold text-2xl md:text-xl lg:text-2xl group-hover:text-[#00e5ff] transition-colors duration-300">
                   {sample.title}

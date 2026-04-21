@@ -33,9 +33,9 @@ export default function VoiceDirecting() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-20 text-center flex flex-col items-center"
       >
-        <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white break-words px-4 w-full text-center">
-          Voice <span className="text-[#00e5ff]">Directing</span>
-        </h1>
+        <h1 className="font-display text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white">
+  Voice <span className="text-[#00e5ff]">Directing</span>
+</h1>
         <p className="text-xl text-white/60 font-light max-w-3xl mx-auto px-2">
           Directing authentic, emotionally grounded performances for global broadcast hits.
         </p>

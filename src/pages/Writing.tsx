@@ -31,11 +31,9 @@ export default function Writing() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-20 text-center"
       >
-        {/* THE FIX: White Text, Cyan Period */}
         <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white">
           Writing<span className="text-[#00e5ff]">.</span>
         </h1>
-        {/* THE FIX: Subtitle set to white/60 to match global rules */}
         <p className="text-xl text-white/60 font-light max-w-3xl mx-auto">
           Crafting compelling narratives, sharp dialogue, and unforgettable characters.
         </p>
@@ -64,16 +62,17 @@ export default function Writing() {
               className="flex flex-col h-full block group hover:scale-[1.02] transition-transform duration-500 ease-out"
             >
               {/* Image Container */}
-              <div className="rounded-xl overflow-hidden bg-zinc-950 border border-zinc-800 shrink-0">
+              <div className="rounded-xl overflow-hidden bg-zinc-950 border border-zinc-800 shrink-0 flex items-center justify-center">
+                {/* THE FIX: Changed object-cover to object-contain so it never crops */}
                 <img 
                   src={sample.image}
                   alt={sample.title}
-                  className="w-full h-auto aspect-video object-cover"
+                  className="w-full h-auto aspect-video object-contain"
                   referrerPolicy="no-referrer"
                 />
               </div>
               
-              {/* Text Block & Visual Button - NOW COMPLETELY CENTERED */}
+              {/* Text Block & Visual Button */}
               <div className="mt-6 text-center flex flex-col flex-grow justify-between items-center">
                 <div className="w-full">
                   {/* Title */}

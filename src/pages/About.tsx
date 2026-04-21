@@ -10,10 +10,9 @@ export default function About() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-12 text-center"
       >
-        <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter uppercase text-white break-words w-full">
-          About <span className="text-[#00e5ff]">Samson</span>
-        </h1>
-      </motion.div>
+<h1 className="font-display text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white">
+  About <span className="text-[#00e5ff]">Samson</span>
+</h1>
 
       <div className="max-w-3xl mx-auto">
         <motion.div

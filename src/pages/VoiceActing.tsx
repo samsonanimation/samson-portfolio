@@ -80,10 +80,15 @@ export default function VoiceActing() {
                 </div>
               </div>
             )}
-            <h3 className="font-display text-2xl font-extrabold mb-2 tracking-wide text-white group-hover:text-[#00e5ff] transition-colors duration-300">{project.title}</h3>
-            <div className="font-sans text-sm text-[#00e5ff] font-medium tracking-widest uppercase">
-              {project.role} <span className="text-white/30 mx-2">|</span> {project.type}
+            
+            {/* THE FIX: This wrapper centers the text on mobile, keeps it left on desktop */}
+            <div className="text-center md:text-left">
+              <h3 className="font-display text-2xl font-extrabold mb-2 tracking-wide text-white group-hover:text-[#00e5ff] transition-colors duration-300">{project.title}</h3>
+              <div className="font-sans text-sm text-[#00e5ff] font-medium tracking-widest uppercase">
+                {project.role} <span className="text-white/30 mx-2">|</span> {project.type}
+              </div>
             </div>
+
           </motion.div>
         ))}
       </div>

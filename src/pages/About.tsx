@@ -4,18 +4,15 @@ export default function About() {
   return (
     <div className="min-h-screen bg-black text-white pt-24 pb-16 px-6 overflow-x-hidden">
       
-      {/* THE NEW CINEMATIC HEADER */}
+      {/* THE NEW CLEAN HEADER */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-20 text-center"
+        className="mb-12 text-center"
       >
-        <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white break-words w-full">
+        <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter uppercase text-white break-words w-full">
           About <span className="text-[#00e5ff]">Samson</span>
         </h1>
-        <p className="text-xl text-white/60 font-light max-w-3xl mx-auto px-2">
-          Blending high-level broadcast execution with sharp storytelling.
-        </p>
       </motion.div>
 
       <div className="max-w-3xl mx-auto">

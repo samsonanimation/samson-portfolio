@@ -68,9 +68,9 @@ export default function DevelopmentSlate() {
             </Link>
             
             {/* The Text & Button Area */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-              {/* Text (Left) */}
-              <div className="flex flex-col">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+              {/* Text Area */}
+              <div className="flex flex-col text-center md:text-left">
                 <h3 className="text-white uppercase font-bold text-3xl md:text-4xl mb-2">
                   {item.title}
                 </h3>
@@ -79,7 +79,7 @@ export default function DevelopmentSlate() {
                 </p>
               </div>
               
-              {/* Button (Right) */}
+              {/* Button */}
               <Link 
                 to={`/project/${item.id}`}
                 className="inline-block rounded-full border-2 border-[#00e5ff] text-[#00e5ff] px-8 py-3 font-bold uppercase tracking-widest transition-all duration-300 hover:bg-[#00e5ff] hover:text-black hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] whitespace-nowrap"

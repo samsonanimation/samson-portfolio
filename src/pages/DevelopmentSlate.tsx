@@ -40,10 +40,7 @@ export default function DevelopmentSlate() {
         <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter text-white uppercase mb-6">
           Development Slate
         </h1>
-        <h2 className="text-[#00e5ff] text-2xl md:text-3xl font-bold uppercase mb-6">
-          Original IP
-        </h2>
-        <p className="text-white/80 text-lg">
+        <p className="text-white/80 text-lg max-w-2xl mx-auto">
           Concept to greenlight. Original IP built for broadcast and beyond.
         </p>
       </motion.div>
@@ -78,7 +75,7 @@ export default function DevelopmentSlate() {
                 <h3 className="text-white uppercase font-bold text-3xl md:text-4xl mb-2">
                   {item.title}
                 </h3>
-                <p className="text-[#00e5ff] text-lg md:text-xl">
+                <p className="text-[#00e5ff] text-lg md:text-xl font-medium">
                   {item.subtitle}
                 </p>
               </div>

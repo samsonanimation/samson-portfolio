@@ -37,7 +37,7 @@ export default function DevelopmentSlate() {
         transition={{ duration: 0.8 }}
         className="mb-24 text-center"
       >
-        <h1 className="text-5xl md:text-7xl font-extrabold text-white uppercase mb-4">
+        <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter text-white uppercase mb-6">
           Development Slate
         </h1>
         <h2 className="text-[#00e5ff] text-2xl md:text-3xl font-bold uppercase mb-6">

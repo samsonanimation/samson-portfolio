@@ -29,18 +29,19 @@ export default function DevelopmentSlate() {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-24">
+    {/* THE FIX: Added overflow-x-hidden and mobile padding */}
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-24 overflow-x-hidden">
       {/* Hero Section */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-20 text-center"
       >
-        {/* THE FIX: White "Development", Cyan "Slate" */}
-        <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white">
+        {/* THE FIX: Responsive text sizes and break-words lock */}
+        <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white break-words w-full">
           Development <span className="text-[#00e5ff]">Slate</span>
         </h1>
-        <p className="text-xl text-white/60 font-light max-w-3xl mx-auto">
+        <p className="text-xl text-white/60 font-light max-w-3xl mx-auto px-2">
           Concept to greenlight. Original IP built for broadcast and beyond.
         </p>
       </motion.div>

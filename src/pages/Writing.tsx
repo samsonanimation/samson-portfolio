@@ -31,10 +31,12 @@ export default function Writing() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-20 text-center"
       >
-        <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase">
-          <span className="text-[#00e5ff]">Writing</span>
+        {/* THE FIX: White Text, Cyan Period */}
+        <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white">
+          Writing<span className="text-[#00e5ff]">.</span>
         </h1>
-        <p className="text-xl text-white/80 font-light max-w-3xl mx-auto">
+        {/* THE FIX: Subtitle set to white/60 to match global rules */}
+        <p className="text-xl text-white/60 font-light max-w-3xl mx-auto">
           Crafting compelling narratives, sharp dialogue, and unforgettable characters.
         </p>
       </motion.div>

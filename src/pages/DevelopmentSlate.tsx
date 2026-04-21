@@ -34,13 +34,12 @@ export default function DevelopmentSlate() {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="mb-24 text-center"
+        className="mb-20 text-center"
       >
-        <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter text-white uppercase mb-6">
+        <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 text-white">
           Development Slate
         </h1>
-        <p className="text-white/80 text-lg max-w-2xl mx-auto">
+        <p className="text-xl text-white/60 font-light max-w-3xl mx-auto">
           Concept to greenlight. Original IP built for broadcast and beyond.
         </p>
       </motion.div>

@@ -36,10 +36,9 @@ export default function DevelopmentSlate() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-20 text-center"
       >
-        {/* THE FIX: Removed break-words and dropped mobile base size to text-3xl */}
-<h1 className="font-display text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white">
-  Development <span className="text-[#00e5ff]">Slate</span>
-</h1>
+        <h1 className="font-display text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white">
+          Development <span className="text-[#00e5ff]">Slate</span>
+        </h1>
         <p className="text-xl text-white/60 font-light max-w-3xl mx-auto px-2">
           Concept to greenlight. Original IP built for broadcast and beyond.
         </p>

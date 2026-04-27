@@ -54,9 +54,9 @@ export default function Contact() {
         className="mb-24 text-center w-full"
       >
         {/* THE FIX: White "Let's Build", Cyan "Something." */}
-<h1 className="font-display text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white">
-  Let's Build <span className="text-[#00e5ff]">Something.</span>
-</h1>
+        <h1 className="font-display text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white">
+          Let's Build <span className="text-[#00e5ff]">Something.</span>
+        </h1>
         <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto font-sans px-2">
           Partner with Samson Animation for original IP development, commercial production, and voice directing.
         </p>

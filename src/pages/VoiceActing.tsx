@@ -20,7 +20,7 @@ export default function VoiceActing() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-24">
+    <div className="max-w-7xl mx-auto px-6 py-24 overflow-x-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -28,8 +28,8 @@ export default function VoiceActing() {
       >
         {/* THE FIX: White "Voice", Cyan "Acting" */}
         <h1 className="font-display text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white">
-  Voice <span className="text-[#00e5ff]">Acting</span>
-</h1>
+          Voice <span className="text-[#00e5ff]">Acting</span>
+        </h1>
         <p className="text-xl text-white/60 font-light max-w-3xl mx-auto">
           Dynamic and versatile vocal performances across animation, commercial, and interactive media.
         </p>

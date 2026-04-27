@@ -32,8 +32,8 @@ export default function Writing() {
         className="mb-20 text-center"
       >
         <h1 className="font-display text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase text-white">
-  Writing<span className="text-[#00e5ff]">.</span>
-</h1>
+          Writing<span className="text-[#00e5ff]">.</span>
+        </h1>
         <p className="text-xl text-white/60 font-light max-w-3xl mx-auto">
           Crafting compelling narratives, sharp dialogue, and unforgettable characters.
         </p>

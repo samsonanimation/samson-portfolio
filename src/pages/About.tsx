@@ -50,6 +50,9 @@ export default function About() {
             <p className="text-zinc-300 text-lg leading-relaxed mb-6">
               Born in Puerto Rico and raised in New York City, James brings a multicultural perspective and a storyteller’s instinct to every project. Since earning his degree from Boston University’s College of Communication, he has built a professional studio pedigree—including a voice directing credit on the first season of Agent 203, as well as providing voice direction for international hits like Super Wings and Katuri.
             </p>
+            <p className="text-zinc-300 text-lg leading-relaxed mb-6">
+              James's secret weapon is his background as a seasoned NYC stand-up comedian. Having performed on iconic stages from Comic Strip Live to the legendary Apollo Theater, his elite comedic timing allows him to take highly technical messaging and inject the precise rhythm and sharp dialogue needed to hold an audience's attention.
+            </p>
 
             {/* Core Services List */}
             <h4 className="font-bold text-xl mb-4 mt-8 text-white">Core Services:</h4>
